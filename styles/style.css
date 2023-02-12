@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    z-index: 9999;
+  }
+  
+  .loader-inner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #f980a1;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  /* Cards */
+  h1 {
+    font-family: Solitreo;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100vw;
+    /* background: #fee2e9; */
+    background-image: url('https://img.freepik.com/free-vector/blurred-valentine-s-day-wallpaper_23-2148819570.jpg?w=1060&t=st=1676215997~exp=1676216597~hmac=6aa5aa977bf4663c09823bcc3bd24935669aec92b6c21ee21d7dd2ac0e9b854c');
+    font-family: "Pangolin", cursive;
+    font-size: 1vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+#toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .container {
+    position: relative;
+    top: 0vmin;
+  }
+  
+  .envelope {
+    position: relative;
+    background: #e1003c;
+    height: 30vmin;
+    width: 47.9vmin;
+  }
+  
+  .card {
+    position: absolute;
+    /* background: white; */
+    background-image: url('https://img.freepik.com/free-vector/blurred-valentine-s-day-wallpaper_23-2148819570.jpg?w=1060&t=st=1676215997~exp=1676216597~hmac=6aa5aa977bf4663c09823bcc3bd24935669aec92b6c21ee21d7dd2ac0e9b854c');
+    height: 25vmin;
+    width: 43vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 2.5vmin;
+    top: 0vmin;
+    animation: slide-rev 0.2s ease-out;
+  }
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+  }
+
+  .btn-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .message {
+    position: absolute;
+    top: 5vmin;
+  }
+  
+  .cover {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 15vmin solid #fba7bd;
+    border-left: 24vmin solid transparent;
+    border-right: 24vmin solid transparent;
+    top: 15vmin;
+    z-index: 3;
+  }
+  
+  .cover::after {
+    /*left triangle*/
+    position: absolute;
+    content: "";
+    border-left: 24.5vmin solid #fcbbcc;
+    border-bottom: 15vmin solid transparent;
+    border-top: 15vmin solid transparent;
+    top: -15vmin;
+    left: -24vmin;
+  }
+  
+  .cover::before {
+    position: absolute;
+    content: "";
+    border-right: 24.5vmin solid #fcbbcc;
+    border-bottom: 15vmin solid transparent;
+    border-top: 15vmin solid transparent;
+    top: -15vmin;
+    left: -0.5vmin;
+  }
+  
+  .lid {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 15vmin solid #f980a1;
+    border-left: 24vmin solid transparent;
+    border-right: 24vmin solid transparent;
+    top: 0;
+    transform-origin: top;
+    animation: open-rev 2s;
+  }
+  
+  .container:hover .lid {
+    animation: open 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .container:hover .card {
+    animation: slide 0.2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  
+  .shadow {
+    position: relative;
+    top: 3vmin;
+    border-radius: 50%;
+    opacity: 0.7;
+    height: 2vmin;
+    width: 48vmin;
+    background: #e8c5d0;
+  }
+  
+  .hearts {
+    position: relative;
+    width: 5vmin;
+    height: 4vmin;
+    top: 7vmin;
+    left: -1vmin;
+  }
+  
+  .hearts:before,
+  .hearts:after {
+    position: absolute;
+    content: "";
+    left: 2.5vmin;
+    top: 7vim;
+    width: 2.5vmin;
+    height: 4vmin;
+    background: #f40b4a;
+    border-radius: 2.5vmin 2.5vmin 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .hearts:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+
+  @keyframes open {
+    100% {
+      transform: rotatex(180deg);
+    }
+  }
+  @keyframes slide {
+    100% {
+      transform: translatey(-15vmin);
+      z-index: 2;
+    }
+  }
+  @keyframes open-rev {
+    from {
+      transform: rotatex(-180deg);
+    }
+  }
+  @keyframes slide-rev {
+    from {
+      transform: translatey(-15vmin);
+    }
+  }
+
+  .btn-clickme{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  button{
+    font-family: Solitreo;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    border-color: #f40b4a;
+    background-color: #f980a1;
+  }
+
+  span{
+    font-family: Solitreo;
+    font-weight: bold;
+  }
+  
+/* Set the size and position of the heart container */
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden; /* clip the hearts that go offscreen */
+  }
+  
+  /* Set the size and position of each heart */
+  .heart {
+    position: absolute;
+    top: -30px;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    background-image: url('https://imgs.search.brave.com/VLTJLH_K4xmw-8mH_Jyq-l7J4CCzhWnGBYguQ4MCdVs/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jbGlw/YXJ0LmluZm8vaW1h/Z2VzL2Njb3ZlcnMv/MTQ4NDU4ODE5OGhl/YXJ0LXBuZy1mcmVl/LnBuZw');
+    background-size: contain;
+    animation: fall 1.5s linear;
+  }
+  
+  /* Define the animation to make the hearts fall */
+  @keyframes fall {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, 100vh);
+      opacity: 0;
+    }
+  }

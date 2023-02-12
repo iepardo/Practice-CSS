@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Solitreo' rel='stylesheet'>
+</head>
+<body>
+    <div id="loader">
+        <div class="loader-inner"></div>
+      </div>
+      <div id="page-content" class="hidden">
+        <!-- Your web page content here -->    
+        <div id="heart-container"></div>
+        <h1 class="title" id="hide">Do you love me?</h1>
+        <div class="btn-toggle">
+            <button id="toggleButton">Yes</button>
+        </div>
+        <div id="content" class="hidden" style="display:none;">
+          <!-- This is the content that will be shown/hidden -->
+          <div class="container">
+            <div class="envelope"></div>
+            <div class="card">
+              <h1 class="message">Happy<br>Valentines.<br>ILOVEYOU<br>Always lablab.</h1>
+              <div class="hearts">
+              </div>
+            </div>
+            <div class="cover"></div>
+            <div class="lid"></div>
+            <div class="shadow"></div>
+          </div>
+          <div class="btn-clickme">
+            <button id="play-video-button"><span>Click Me!</span></button>
+          </div>
+        </div>
+        <div id="video-modal" style="display: none;">
+            <h1 class="title">Enjoy!</h1>
+            <iframe src="https://drive.google.com/file/d/1G-lD9t2px92uMQHipmyDn2PzqzJGQEQt/preview" width="640" height="480" allow="autoplay"></iframe>
+            <div class="btn-toggle">
+                <button id="close-video-button">Close</button>
+            </div>
+          </div>   
+      </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
