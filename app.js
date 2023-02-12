@@ -13,6 +13,7 @@ window.addEventListener("load", function() {
     // Show the modal
     modal.style.display = 'inline-block';
     content.style.display = 'none';
+    hidetitle.style.display = 'none';
     document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
     });
 
@@ -41,7 +42,7 @@ window.addEventListener("load", function() {
   }
   
   // Call the createHeart function every 200 milliseconds to create a new heart
-  setInterval(createHeart, 100);     
+  setInterval(createHeart, 50);     
     
   });
 
@@ -53,8 +54,21 @@ window.addEventListener("load", function() {
       content.style.display = 'block';
       toggleButton.style.display = 'none';
       hide.style.display = 'none';
+      movingButton.style.display = 'none';
     } else {
         content.style.display = 'none';
         toggleButton.textContent = 'Click me';
     }
   });
+
+  const movingButton = document.getElementById('movingButton');
+
+  function moveButton() {
+    const newX = Math.floor(Math.random() * window.innerWidth);
+    const newY = Math.floor(Math.random() * window.innerHeight);
+  
+    movingButton.style.top = `${newY}px`;
+    movingButton.style.left = `${newX}px`;
+  }
+  
+  movingButton.addEventListener('mousemove', moveButton);
