@@ -25,6 +25,7 @@ window.addEventListener("load", function() {
     // Hide the modal
     modal.style.display = 'none';
     content.style.display = 'block';
+    hidetitle.style.display = 'flex';
     });
 
   });

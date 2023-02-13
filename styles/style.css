@@ -290,3 +290,16 @@
   transform: translate(-50%, -50%);
 
   }
+
+  @media (max-width: 480px) {
+    .responsive-iframe {
+      width: 100%;
+      height: auto;
+    }
+  .title-envelope{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+  }
