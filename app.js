@@ -28,6 +28,7 @@ window.addEventListener("load", function() {
     hidetitle.style.display = 'flex';
     });
 
+    
   });
   
   document.addEventListener('DOMContentLoaded', function() {
@@ -73,3 +74,28 @@ window.addEventListener("load", function() {
   }
   
   movingButton.addEventListener('mousemove', moveButton);
+
+
+  // Get references to the button and modal elements
+  const buttonVideo = document.getElementById('play-video-button1');
+  const modalVideo = document.getElementById('video-modal1');
+
+  // Add a click event listener to the button
+  buttonVideo.addEventListener('click', () => {
+  // Show the modal
+  modalVideo.style.display = 'inline-block';
+  content.style.display = 'none';
+  hidetitle.style.display = 'none';
+  document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
+  });
+
+  // Get a reference to the close button
+  const closeButtonVideo = document.getElementById('close-video-button1');
+
+  // Add a click event listener to the close button
+  closeButtonVideo.addEventListener('click', () => {
+  // Hide the modal
+  modalVideo.style.display = 'none';
+  content.style.display = 'block';
+  hidetitle.style.display = 'flex';
+  });
